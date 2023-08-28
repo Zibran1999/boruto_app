@@ -2,7 +2,7 @@ package com.zibran.brutoapp.domain.repository
 
 import com.zibran.brutoapp.domain.model.Hero
 
-interface LocalDataSource {
+fun interface LocalDataSource {
 
     suspend fun getSelectedHero(heroId: Int): Hero
 }

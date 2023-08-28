@@ -7,7 +7,7 @@ class ReadOnBoardingUseCase(
     private val repository: Repository
 ) {
 
-   suspend operator fun invoke(): Flow<Boolean>{
+    operator fun invoke(): Flow<Boolean> {
         return repository.readOnBoardingState()
     }
 }

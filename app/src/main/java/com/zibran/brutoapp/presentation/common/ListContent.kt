@@ -50,7 +50,6 @@ import com.zibran.brutoapp.utils.Constants.BASE_URL
 
 @Composable
 fun ListContent(
-    modifier: Modifier,
     heroes: LazyPagingItems<Hero>,
     navController: NavHostController
 ) {

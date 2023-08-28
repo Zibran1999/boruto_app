@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zibran.brutoapp.domain.use_cases.UseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,8 +15,8 @@ class WelcomeViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-    fun saveOnBoardingState(completed: Boolean) {
-        viewModelScope.launch(Dispatchers.IO) {
+    fun saveOnBoardingState(completed: Boolean, dispatcher: CoroutineDispatcher = Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             useCases.saveOnBoardingUseCase(completed = completed)
         }
     }

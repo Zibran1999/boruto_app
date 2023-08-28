@@ -9,21 +9,16 @@ import androidx.navigation.navArgument
 import com.zibran.brutoapp.presentation.screens.details.DetailScreen
 import com.zibran.brutoapp.presentation.screens.home.HomeScreen
 import com.zibran.brutoapp.presentation.screens.search.SearchScreen
-import com.zibran.brutoapp.presentation.screens.splash.SplashScreen
 import com.zibran.brutoapp.presentation.screens.welocome.WelcomeScreen
 import com.zibran.brutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 
 @Composable
-fun SetupNavGraph(navController: NavHostController) {
+fun SetupNavGraph(navController: NavHostController, startDestination: String) {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Splash.route
+        startDestination = startDestination
     ) {
-
-        composable(Screen.Splash.route) {
-            SplashScreen(navHostController = navController)
-        }
 
         composable(Screen.Welcome.route) {
 
